@@ -8,4 +8,14 @@
 # dependency directories
 node_modules/
 vendor/
-.terraform/
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# build files
+*.zip
+test/.terraform.lock.hcl
