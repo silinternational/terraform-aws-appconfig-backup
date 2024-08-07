@@ -108,7 +108,7 @@ resource "aws_iam_role_policy" "lambda" {
         Sid      = "allowPutObject"
         Effect   = "Allow"
         Action   = "s3:PutObject"
-        Resource = "${data.aws_s3_bucket.backup.arn}/*"
+        Resource = "arn:aws:s3:::${var.s3_bucket_name}/*"
       },
     ]
   })
@@ -123,10 +123,6 @@ resource "aws_cloudwatch_log_group" "this" {
 resource "aws_s3_bucket" "backup" {
   count = var.create_s3_bucket ? 1 : 0
 
-  bucket = var.s3_bucket_name
-}
-
-data "aws_s3_bucket" "backup" {
   bucket = var.s3_bucket_name
 }
 
