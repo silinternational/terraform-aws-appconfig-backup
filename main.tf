@@ -68,7 +68,7 @@ resource "aws_lambda_function" "this" {
 
 data "archive_file" "code" {
   type        = "zip"
-  source_file = "index.mjs"
+  source_file = "${path.module}/index.mjs"
   output_path = "lambda_function_payload.zip"
 }
 
