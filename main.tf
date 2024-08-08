@@ -32,7 +32,7 @@ resource "aws_iam_role" "extension" {
 }
 
 resource "aws_iam_role_policy" "extension" {
-  name = "app-config-backup-extension-role-${random_id.this.hex}"
+  name = "app-config-backup-extension-policy-${random_id.this.hex}"
   role = aws_iam_role.extension.id
   policy = jsonencode({
     Version = "2012-10-17"
