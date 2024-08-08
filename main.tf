@@ -18,7 +18,7 @@ resource "aws_appconfig_extension" "this" {
 }
 
 resource "aws_iam_role" "extension" {
-  name = "${var.extension_name}-role-${random_id.this.hex}"
+  name = "app-config-backup-extension-role-${random_id.this.hex}"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
@@ -32,7 +32,7 @@ resource "aws_iam_role" "extension" {
 }
 
 resource "aws_iam_role_policy" "extension" {
-  name = "${var.extension_name}-role-policy-${random_id.this.hex}"
+  name = "app-config-backup-extension-role-${random_id.this.hex}"
   role = aws_iam_role.extension.id
   policy = jsonencode({
     Version = "2012-10-17"
