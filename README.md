@@ -26,4 +26,4 @@ Configuration Profile, or Environment. To do this in the AWS Console, follow the
 
 ## More info
 
-More information is available at the [Terraform Registry](https://registry.terraform.io/modules/silinternational/appconfig-backup/aws/latest)
+More information is available at the [Terraform Registry](https://registry.terraform.io/modules/sil-org/appconfig-backup/aws/latest)
